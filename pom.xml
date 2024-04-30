@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>demo_lib</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -55,5 +55,11 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<distributionManagement>
+	   <repository>
+	     <id>github</id>
+	     <name>GitHub swapnil Apache Maven Packages</name>
+	     <url>https://maven.pkg.github.com/swapnilj2023/swap_lib</url>
+	   </repository>
+	</distributionManagement>
 </project>
