@@ -5,10 +5,10 @@ import java.lang.reflect.Field;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.Mapping;
 
-@Component
+
 public class CustomAuditService {
 	
-	public String compareTo(Object o, Object n) {
+	public static String compareTo(Object o, Object n) {
 	    StringBuilder result = new StringBuilder();
 	    try {
 	        Field[] fields = o.getClass().getDeclaredFields();
