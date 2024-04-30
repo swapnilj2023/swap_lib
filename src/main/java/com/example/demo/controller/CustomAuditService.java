@@ -2,8 +2,10 @@ package com.example.demo.controller;
 
 import java.lang.reflect.Field;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.Mapping;
 
+@Component
 public class CustomAuditService {
 	
 	public String compareTo(Object o, Object n) {
