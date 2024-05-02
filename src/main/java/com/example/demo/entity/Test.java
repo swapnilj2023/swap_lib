@@ -3,12 +3,13 @@ package com.example.demo.entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@EntityScan
+@Entity
 @Table(name = "test")
 public class Test {
 	@Id
@@ -21,7 +22,6 @@ public class Test {
 
 	public Test() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Test(Long id, String type) {
