@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class TestRepo {
-//		private JdbcTemplate jdbcTemplate;
+		private JdbcTemplate jdbcTemplate;
 		
 	    private static final String SQL_CREATE_TABLE = ""
 	            + " CREATE TABLE TEST"
@@ -16,17 +16,17 @@ public class TestRepo {
 	            + " PRICE NUMERIC(15, 2) NOT NULL"
 	            + " )";
 
-//	    @Autowired 
-//	    public void YourRepository(JdbcTemplate jdbcTemplate) {
-//	        this.jdbcTemplate = jdbcTemplate;
-//	    }
+	    @Autowired 
+	    public void YourRepository(JdbcTemplate jdbcTemplate) {
+	        this.jdbcTemplate = jdbcTemplate;
+	    }
 	    
 	    public void start() {
 	        createTestData(true);
 	    }
 
 	    void createTestData(boolean dropTable) {
-	    	JdbcTemplate jdbcTemplate = new JdbcTemplate();
+
 	        if (dropTable) {
 	            jdbcTemplate.execute("DROP TABLE TEST");
 	        }
