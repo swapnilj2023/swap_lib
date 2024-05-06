@@ -23,7 +23,7 @@ public class TestRepo {
 	        createTestData(true);
 	    }
 
-	    void createTestData(boolean dropTable) {
+	    public void createTestData(boolean dropTable) {
 
 	    	JdbcTemplate jdbcTemplate = new JdbcTemplate();
 	        if (dropTable) {
