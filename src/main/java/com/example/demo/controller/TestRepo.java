@@ -20,6 +20,13 @@ public class TestRepo {
 	            + " PRICE NUMERIC(15, 2) NOT NULL"
 	            + " )";
 
+	    private static String TABLE_EXIST= "SELECT EXISTS (" +
+                "    SELECT 1 " +
+                "    FROM information_schema.tables " +
+                "    WHERE table_schema = ? " +
+                "    AND table_name = ? " +
+                ")";
+	    
 
 	    public void createTestData(boolean dropTable,String url,String username,String password) {
 	    	 DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -29,9 +36,11 @@ public class TestRepo {
 	         dataSource.setPassword(password);
 
 	    	JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-	        if (dropTable) {
-	            jdbcTemplate.execute("DROP TABLE TEST");
-	        }
+	    	Boolean exist = jdbcTemplate.queryForObject(TABLE_EXIST, Boolean.class, "customer", "test");
+	        if(!exist) {
 	        jdbcTemplate.execute(SQL_CREATE_TABLE);
+	        }
 	    }
+	    
+	 
 }
