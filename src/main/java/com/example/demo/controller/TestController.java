@@ -1,4 +1,4 @@
-//package com.example.demo.controller;
+package com.example.demo.controller;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
@@ -10,7 +10,7 @@
 //@RestController
 //@RequestMapping("test")
 //@CrossOrigin(origins = "*", allowedHeaders = "*")
-//public class TestController {
+public class TestController {
 //
 //	@Autowired
 //	TestRepo testRepo;
@@ -20,4 +20,4 @@
 //	public void getBillingCount() {
 //      testRepo.createTestData(false); 
 //	}
-//}
+}
