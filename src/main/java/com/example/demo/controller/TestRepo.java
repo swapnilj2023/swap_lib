@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 public class TestRepo {
 //		private JdbcTemplate jdbcTemplate;
@@ -24,8 +25,13 @@ public class TestRepo {
 	    }
 
 	    public void createTestData(boolean dropTable) {
+	    	 DriverManagerDataSource dataSource = new DriverManagerDataSource();
+	         dataSource.setDriverClassName("org.postgresql.Driver");
+	         dataSource.setUrl("jdbc:postgresql://localhost:5432/crm_db?currentSchema=lib");
+	         dataSource.setUsername("postgres");
+	         dataSource.setPassword("root");
 
-	    	JdbcTemplate jdbcTemplate = new JdbcTemplate();
+	    	JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 	        if (dropTable) {
 	            jdbcTemplate.execute("DROP TABLE TEST");
 	        }
