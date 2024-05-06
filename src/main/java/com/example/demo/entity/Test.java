@@ -9,15 +9,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//@Entity
-@Table(name = "test")
+
 public class Test {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+
 	private Long id;
 
-	@Column(name = "type")
 	private String type;
 
 	public Test() {
