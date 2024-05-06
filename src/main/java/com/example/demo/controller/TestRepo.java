@@ -20,16 +20,13 @@ public class TestRepo {
 	            + " PRICE NUMERIC(15, 2) NOT NULL"
 	            + " )";
 
-	    public void start() {
-	        createTestData(true);
-	    }
 
-	    public void createTestData(boolean dropTable) {
+	    public void createTestData(boolean dropTable,String url,String username,String password) {
 	    	 DriverManagerDataSource dataSource = new DriverManagerDataSource();
 	         dataSource.setDriverClassName("org.postgresql.Driver");
-	         dataSource.setUrl("jdbc:postgresql://localhost:5432/crm_db?currentSchema=lib");
-	         dataSource.setUsername("postgres");
-	         dataSource.setPassword("root");
+	         dataSource.setUrl(url);
+	         dataSource.setUsername(username);
+	         dataSource.setPassword(password);
 
 	    	JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 	        if (dropTable) {
